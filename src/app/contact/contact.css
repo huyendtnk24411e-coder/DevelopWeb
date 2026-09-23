@@ -1,0 +1,18 @@
+thread,th{
+    background-color:aquamarine;
+}
+table,tr,td,th{
+    border:1px solid black;
+    border-collapse:collapse;
+}
+tbody tr:nth-child(even){
+    background-color:lightgray;
+}
+tbody tr:hover{
+    background-color:lightblue;
+}
+tbody tr:hover{
+    background-color:lightblue;
+    font-style:italic;
+    cursor:pointer;
+    }

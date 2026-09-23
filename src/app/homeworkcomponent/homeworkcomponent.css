@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    border: 1px solid blue;
+    background: gray;
+    width: 100%;
+    box-sizing: border-box;
+    text-indent: 0px;
+}
+
+#container ul {
+    list-style: none;
+}
+
+/* Giữ chiều cao cho menu chính */
+#container > ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#container ul li {
+    position: relative;
+    float: left;
+}
+
+#container ul li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .3em 10px;
+}
+
+#container li a:hover {
+    color: white;
+    background: orange;
+}
+
+/* Menu con */
+#container li ul {
+    position: absolute;
+    display: none;
+    width: 10em;
+    top: 100%;
+    left: 0;
+}
+
+/* Rê chuột vào Chapter thì xổ xuống */
+#container li:hover ul {
+    display: block;
+}
+
+/* Các mục trong menu con */
+#container ul li ul li {
+    width: 100%;
+    border: 1px solid green;
+    float: none;
+}

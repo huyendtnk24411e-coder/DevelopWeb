@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let product of products()">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+              <td>
+                    <img [src]="product.image_link" height="100" width="100"/>
+                </td> 
+        </tr>
+    </tbody>
+</table>
