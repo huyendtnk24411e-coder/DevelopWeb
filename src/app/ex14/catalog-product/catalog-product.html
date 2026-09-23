@@ -1,0 +1,51 @@
+<p>catalog-product works!</p>
+
+
+<table border="1">
+
+  <!-- CATEGORY -->
+  <tbody *ngFor="let c of categories">
+
+    <!-- Category information -->
+    <tr>
+      <td colspan="4">
+        <b>Ma Danh Muc:</b> {{c.Cateid}}
+      </td>
+
+      <td>
+        <b>Ten Danh Muc:</b> {{c.CateName}}
+      </td>
+    </tr>
+
+    <!-- Product table header -->
+    <tr>
+      <td>Ma San Pham</td>
+      <td>Ten San Pham</td>
+      <td>Gia San Pham</td>
+      <td>Picture</td>
+    </tr>
+
+    <!-- PRODUCTS -->
+    <tr *ngFor="let p of c.Products">
+
+      <td>
+        {{p.ProductId}}
+      </td>
+
+      <td>
+        {{p.ProductName}}
+      </td>
+
+      <td>
+        {{p.Price}}
+      </td>
+
+      <td>
+        <img [src]="p.Image" width="60">
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>

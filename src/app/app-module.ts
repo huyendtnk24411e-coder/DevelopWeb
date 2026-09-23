@@ -18,6 +18,7 @@ import { ProductListCallHttpServiceComponent } from './services/product-list-cal
 import { ProductHttpHandleErrorServiceComponent } from './product-http-handle-error-service-component/product-http-handle-error-service-component';
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
+import { CatalogProduct } from './ex14/catalog-product/catalog-product';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ServiceProductImageEventDetail } from './ex13/service-product-image-eve
     ProductHttpHandleErrorServiceComponent,
     ServiceProductImageEvent,
     ServiceProductImageEventDetail,
+    CatalogProduct,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],

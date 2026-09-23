@@ -13,6 +13,7 @@ import { ProductListCallHttpServiceComponent } from './services/product-list-cal
 import { ProductHttpHandleErrorServiceComponent }from './product-http-handle-error-service-component/product-http-handle-error-service-component';
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
+import { CatalogProduct } from './ex14/catalog-product/catalog-product';
 const routes: Routes = [
   {path: 'binding-property', component: BindingPropertyComponent},
   {path: 'binding-class', component: BindingClassComponent},
@@ -30,6 +31,10 @@ const routes: Routes = [
 
 {
   path: 'service-product-image-event/:id',component: ServiceProductImageEventDetail
+},
+{
+  path: 'catalog-product',
+  component: CatalogProduct
 },
 ];
 
