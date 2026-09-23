@@ -14,6 +14,7 @@ import { ProductHttpHandleErrorServiceComponent }from './product-http-handle-err
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
 import { CatalogProduct } from './ex14/catalog-product/catalog-product';
+import { GroupCustomers } from './ex18/group-customers/group-customers';
 const routes: Routes = [
   {path: 'binding-property', component: BindingPropertyComponent},
   {path: 'binding-class', component: BindingClassComponent},
@@ -25,17 +26,10 @@ const routes: Routes = [
   {path: 'product-list-call-service', component: ProductListCallServiceComponent},
   {path: 'product-list-call-http-service', component: ProductListCallHttpServiceComponent},
   {path: 'product-http-handle-error-service', component: ProductHttpHandleErrorServiceComponent},
-  {
-  path: 'service-product-image-event',component: ServiceProductImageEvent
-},
-
-{
-  path: 'service-product-image-event/:id',component: ServiceProductImageEventDetail
-},
-{
-  path: 'catalog-product',
-  component: CatalogProduct
-},
+  {path: 'service-product-image-event',component: ServiceProductImageEvent},
+  {path: 'service-product-image-event/:id',component: ServiceProductImageEventDetail},
+  {path: 'catalog-product',component: CatalogProduct},
+  {path: 'group-customers',component: GroupCustomers}
 ];
 
 @NgModule({

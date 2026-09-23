@@ -1,0 +1,43 @@
+<p>group-customers works!</p>
+<table border="1">
+
+  <tbody *ngFor="let group of customerGroups">
+    <tr>
+      <td colspan="5">
+        {{group.CustomerTypeId}} - {{group.CustomterTypeName}}
+      </td>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Picture</th>
+    </tr>
+    <tr *ngFor="let customer of group.Customers">
+
+      <td>
+        {{customer.Id}}
+      </td>
+
+      <td>
+        {{customer.Name}}
+      </td>
+
+      <td>
+        {{customer.Email}}
+      </td>
+
+      <td>
+        {{customer.Age}}
+      </td>
+
+      <td>
+        <img
+          [src]="customer.Image"
+          width="120"
+          height="100">
+      </td>
+    </tr>
+  </tbody>
+</table>
