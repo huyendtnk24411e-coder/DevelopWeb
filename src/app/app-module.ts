@@ -20,6 +20,10 @@ import { ServiceProductImageEvent } from './ex13/service-product-image-event/ser
 import { ServiceProductImageEventDetail } from './ex13/service-product-image-event-detail/service-product-image-event-detail';
 import { CatalogProduct } from './ex14/catalog-product/catalog-product';
 import { GroupCustomers } from './ex18/group-customers/group-customers';
+import { ProductDetailComponent } from './product-detail-component/product-detail-component';
+import { ProductListAdvancedComponent } from './product-list-advanced-component/product-list-advanced-component';
+import { ProductListSearchComponent } from './product-list-search-component/product-list-search-component';
+import { PageNotFoundComponent } from './page-not-found-component/page-not-found-component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { GroupCustomers } from './ex18/group-customers/group-customers';
     ServiceProductImageEventDetail,
     CatalogProduct,
     GroupCustomers,
+    ProductDetailComponent,
+    ProductListAdvancedComponent,
+    ProductListSearchComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptorsFromDi())],

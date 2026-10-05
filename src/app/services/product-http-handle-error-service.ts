@@ -2,8 +2,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 
-import { throwError } from 'rxjs/internal/observable/throwError';
-
 import { Product } from '../classes/IProduct';
 
 import { Observable } from 'rxjs/internal/Observable';
@@ -12,15 +10,15 @@ import { retry } from 'rxjs/internal/operators/retry';
 
 import { catchError } from 'rxjs/internal/operators/catchError';
 
+import { map, throwError } from 'rxjs';
+
 @Injectable({
-
   providedIn: 'root'
-
 })
 
 export class ProductHttpHandleErrorService {
 
-  private _url = "/datasets/products1.json";
+  private _url = "/datasets/products.json";
 
   constructor(private _http: HttpClient) {}
 
@@ -38,21 +36,21 @@ export class ProductHttpHandleErrorService {
 
   }
 
-  handleError(error: HttpErrorResponse) {
+  getProductById(id: number): Observable<Product | undefined> {
 
-    console.log("error.error:", error.error);
+    return this.getProductList().pipe(
 
-    console.log("error.headers:", error.headers);
+      map((products: Product[]) => products.find(p => p.id === id)),
 
-    console.log("error.status:", error.status);
+      catchError(this.handleError)
 
-    console.log("error.statusText:", error.statusText);
+    );
 
-    console.log("error.url:", error.url);
+  }
 
-    console.log("error.message:", error.message);
+  private handleError(error: HttpErrorResponse) {
 
-    return throwError(() => new Error(error.message));
+    return throwError(() => error);
 
   }
 

@@ -15,6 +15,11 @@ import { ServiceProductImageEventDetail } from './ex13/service-product-image-eve
 import { ServiceProductImageEvent } from './ex13/service-product-image-event/service-product-image-event';
 import { CatalogProduct } from './ex14/catalog-product/catalog-product';
 import { GroupCustomers } from './ex18/group-customers/group-customers';
+import { ProductDetailComponent } from './product-detail-component/product-detail-component';
+import { ProductListAdvancedComponent } from './product-list-advanced-component/product-list-advanced-component';
+import { ProductListSearchComponent } from './product-list-search-component/product-list-search-component';
+import { PageNotFoundComponent } from './page-not-found-component/page-not-found-component';
+import { Contact } from './contact/contact';
 const routes: Routes = [
   {path: 'binding-property', component: BindingPropertyComponent},
   {path: 'binding-class', component: BindingClassComponent},
@@ -29,7 +34,26 @@ const routes: Routes = [
   {path: 'service-product-image-event',component: ServiceProductImageEvent},
   {path: 'service-product-image-event/:id',component: ServiceProductImageEventDetail},
   {path: 'catalog-product',component: CatalogProduct},
-  {path: 'group-customers',component: GroupCustomers}
+  {path: 'group-customers',component: GroupCustomers},
+  {path:'products/:id',component:ProductDetailComponent},
+  { path: "products", component: ProductListAdvancedComponent },
+  { path: "searchproduct", component: ProductListSearchComponent },
+  { path:'',component:Contact},
+  {
+  path: 'samplenested',
+  component: ProductListAdvancedComponent,
+  children: [
+    {
+      path: 'search',
+      component: ProductListSearchComponent
+    },
+    {
+      path: 'detail/:id',
+      component: ProductDetailComponent
+    }
+  ]
+},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

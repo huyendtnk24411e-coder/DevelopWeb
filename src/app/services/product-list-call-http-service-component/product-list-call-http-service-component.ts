@@ -3,6 +3,7 @@ import { Component, signal } from '@angular/core';
 import { Product } from '../../classes/IProduct';
 
 import { ProductHttpService } from '../product-http-service';
+import { ProductHttpHandleErrorService } from '../product-http-handle-error-service';
 
 @Component({
   selector: 'app-product-list-call-http-service-component',
@@ -14,7 +15,7 @@ export class ProductListCallHttpServiceComponent {
 
   products = signal<Product[]>([]);
 
-  constructor(private _service: ProductHttpService) { }
+  constructor(private _service: ProductHttpHandleErrorService) { }
 
   ngOnInit(): void {
 
